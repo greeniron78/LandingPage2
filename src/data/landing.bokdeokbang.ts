@@ -34,7 +34,7 @@ export const bokdeokbangLanding: LandingPage = {
       title: "집을 찾기 전에, 당신의 하루를 먼저 듣습니다.",
       subtitle:
         "복덕방은 동네의 공기, 출근길, 밤의 조용함까지 함께 살펴보며 오래 머물 수 있는 선택을 돕습니다.",
-      backgroundImage: "/globe.svg",
+      backgroundImage: "/images/story-background.png",
       actions: [
         {
           type: "kakao",
