@@ -52,8 +52,8 @@ export const landingPage2: LandingPage = {
       type: "video",
       title: "상담은 이렇게 시작됩니다",
       description:
-        "짧은 소개 영상을 통해 복덕방이 매물을 고르는 방식과 상담 흐름을 확인해 보세요.",
-      youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "짧은 소개 영상을 통해 포디어카페가 매물을 고르는 방식과 상담 흐름을 확인해 보세요.",
+      youtubeUrl: "https://youtu.be/yNQ23sQ9pxg?si=Ei6k9gWKhYf19Hb2",
     },
     {
       type: "text",

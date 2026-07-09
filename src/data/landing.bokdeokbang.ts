@@ -52,18 +52,18 @@ export const bokdeokbangLanding: LandingPage = {
       type: "video",
       title: "상담은 이렇게 시작됩니다",
       description:
-        "짧은 소개 영상을 통해 복덕방이 매물을 고르는 방식과 상담 흐름을 확인해 보세요.",
-      youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "짧은 소개 영상을 통해 포디어카페에 매물을 고르는 방식과 상담 흐름을 확인해 보세요.",
+      youtubeUrl: "https://youtu.be/yNQ23sQ9pxg?si=Ei6k9gWKhYf19Hb2",
     },
     {
       type: "text",
       eyebrow: "Our Point of View",
       title: "좋은 매물보다 먼저, 좋은 기준을 세웁니다.",
-      body: "가격과 평수만으로는 매일의 만족을 설명하기 어렵습니다. 복덕방은 생활 반경, 소음, 채광, 이동 시간, 주변 분위기를 함께 묻고 기록합니다. 그래서 상담의 끝은 단순한 목록이 아니라 나에게 맞는 선택지로 좁혀집니다.",
+      body: "가격과 평수만으로는 매일의 만족을 설명하기 어렵습니다. 포디어카페는 생활 반경, 소음, 채광, 이동 시간, 주변 분위기를 함께 묻고 기록합니다. 그래서 상담의 끝은 단순한 목록이 아니라 나에게 맞는 선택지로 좁혀집니다.",
     },
     {
       type: "storyCards",
-      title: "복덕방이 살펴보는 장면들",
+      title: "포디어카페가 살펴보는 장면들",
       description:
         "매물을 보기 전후로 놓치기 쉬운 생활의 단서를 카드처럼 정리했습니다.",
       cards: [
