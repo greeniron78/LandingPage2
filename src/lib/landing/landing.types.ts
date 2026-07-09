@@ -42,6 +42,7 @@ export type LandingStoryCardSection = {
   type: "storyCards";
   title: string;
   description?: string;
+  backgroundImage: string;
   cards: LandingStoryCard[];
 };
 

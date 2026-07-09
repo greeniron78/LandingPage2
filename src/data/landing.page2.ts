@@ -34,7 +34,7 @@ export const landingPage2: LandingPage = {
       title: "landing_page2, 당신의 하루를 먼저 듣습니다.",
       subtitle:
         "복덕방은 동네의 공기, 출근길, 밤의 조용함까지 함께 살펴보며 오래 머물 수 있는 선택을 돕습니다.",
-      backgroundImage: "/globe.svg",
+      backgroundImage: "/images/story-background.png",
       actions: [
         {
           type: "kakao",
@@ -66,6 +66,7 @@ export const landingPage2: LandingPage = {
       title: "복덕방이 살펴보는 장면들",
       description:
         "매물을 보기 전후로 놓치기 쉬운 생활의 단서를 카드처럼 정리했습니다.",
+      backgroundImage: "/globe.svg",
       cards: [
         {
           title: "아침의 이동",
