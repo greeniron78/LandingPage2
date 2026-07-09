@@ -3,8 +3,8 @@ import type { LandingPage } from "@/lib/landing/landing.types";
 const contact = {
   phone: "010-0000-0000",
   kakaoChannelUrl: "https://pf.kakao.com/_placeholder",
-  mapUrl: "https://map.kakao.com/link/search/복덕방",
-  address: "서울시 성동구 성수동 000-00",
+  mapUrl: "https://map.kakao.com/link/search/포디어카페",
+  address: "대구 달서구 월배로 162 1층",
 };
 
 export const bokdeokbangLanding: LandingPage = {
@@ -109,7 +109,7 @@ export const bokdeokbangLanding: LandingPage = {
     },
     {
       type: "footer",
-      businessName: "복덕방",
+      businessName: "포디어카페",
       contactText: `${contact.phone} · ${contact.address}`,
       notice:
         "표시된 연락처와 주소는 MVP용 placeholder입니다. 실제 정보는 데이터 파일에서만 교체하세요.",

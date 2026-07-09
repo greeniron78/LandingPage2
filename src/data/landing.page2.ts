@@ -129,7 +129,7 @@ export const landingPage2: LandingPage = {
     },
     {
       type: "footer",
-      businessName: "복덕방",
+      businessName: "포디어카페",
       contactText: `${contact.phone} · ${contact.address}`,
       notice:
         "표시된 연락처와 주소는 MVP용 placeholder입니다. 실제 정보는 데이터 파일에서만 교체하세요.",
