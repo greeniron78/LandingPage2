@@ -5,78 +5,111 @@ import { HeroSection } from "./HeroSection";
 import { StoryCardSection } from "./StoryCardSection";
 import { TextBlockSection } from "./TextBlockSection";
 import { VideoSection } from "./VideoSection";
-import type {
-  LandingPage,
-  LandingSection,
-  LandingStoryCardSection,
-  LandingTextBlockSection,
-  LandingVideoSection,
-} from "@/lib/landing/landing.types";
+import type { LandingPage, LandingSection } from "@/lib/landing/landing.types";
 
 type LandingRendererProps = {
   page: LandingPage;
 };
 
-function renderSection(section: LandingSection) {
+function renderSection(section: LandingSection, key: string) {
   switch (section.type) {
     case "hero":
-      return <HeroSection key={section.type} section={section} />;
+      return <HeroSection key={key} section={section} />;
     case "video":
-      return <VideoSection key={section.type} section={section} />;
+      return <VideoSection key={key} section={section} />;
     case "text":
-      return <TextBlockSection key={section.type} section={section} />;
+      return <TextBlockSection key={key} section={section} />;
     case "storyCards":
-      return <StoryCardSection key={section.type} section={section} />;
+      return <StoryCardSection key={key} section={section} />;
     case "cta":
-      return <CTASection key={section.type} section={section} />;
+      return <CTASection key={key} section={section} />;
     case "footer":
-      return <FooterSection key={section.type} section={section} />;
+      return <FooterSection key={key} section={section} />;
   }
 }
 
-function isStoryVideo(section: LandingSection): section is LandingVideoSection {
-  return section.type === "video";
+function isIntroSection(section: LandingSection) {
+  return (
+    section.type === "hero" || section.type === "video" || section.type === "text"
+  );
 }
 
-function isStoryText(section: LandingSection): section is LandingTextBlockSection {
-  return section.type === "text";
-}
+function getSectionKey(section: LandingSection, index: number) {
+  if ("id" in section && typeof section.id === "string" && section.id.length > 0) {
+    return section.id;
+  }
 
-function isStoryCards(section: LandingSection): section is LandingStoryCardSection {
-  return section.type === "storyCards";
+  return `${index}-${section.type}`;
 }
 
 export function LandingRenderer({ page }: LandingRendererProps) {
-  const hero = page.sections.find((section) => section.type === "hero");
-  const storyVideo = page.sections.find(isStoryVideo);
-  const storyText = page.sections.find(isStoryText);
-  const storyCards = page.sections.find(isStoryCards);
-  const cta = page.sections.find((section) => section.type === "cta");
-  const footer = page.sections.find((section) => section.type === "footer");
+  const introSections: LandingSection[] = [];
+  const remainingSections: LandingSection[] = [];
+  let introBackgroundImage = "";
+  let collectingIntro = true;
+
+  for (const section of page.sections) {
+    if (collectingIntro && isIntroSection(section)) {
+      introSections.push(section);
+
+      if (section.type === "hero" && !introBackgroundImage) {
+        introBackgroundImage = section.backgroundImage;
+      }
+
+      continue;
+    }
+
+    collectingIntro = false;
+    remainingSections.push(section);
+  }
 
   return (
     <>
       <main>
-        {hero ? (
-          <section className="relative isolate min-h-[200svh] bg-[#16251d] text-white">
-            <div
-              className="pointer-events-none fixed inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${hero.backgroundImage})` }}
-            />
-            <div className="relative z-10 mx-auto w-full max-w-5xl px-5 pt-6 sm:px-8 sm:pt-8 lg:px-10">
-                <HeroSection section={hero} />
-                {storyVideo ? <VideoSection section={storyVideo} /> : null}
-                {storyText ? <TextBlockSection section={storyText} /> : null}
+        {introSections.length ? (
+          <section className="relative isolate bg-[#16251d] text-white">
+            {introBackgroundImage ? (
+              <div
+                className="pointer-events-none fixed inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${introBackgroundImage})` }}
+              />
+            ) : null}
+            <div className="relative z-10 mx-auto w-full max-w-5xl px-5 sm:px-8 lg:px-10">
+              <section className="flex h-svh items-end justify-center pb-10 sm:pb-12">
+                <div className="text-center text-white">
+                  <p className="text-sm font-medium tracking-[0.18em] text-white/85">
+                    스크롤을 내려주세요.
+                  </p>
+                  <div className="mt-4 flex justify-center">
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      className="h-6 w-6 text-white/85"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M12 5v14" />
+                      <path d="m6 13 6 6 6-6" />
+                    </svg>
+                  </div>
+                </div>
+              </section>
+              {introSections.map((section, index) =>
+                renderSection(section, getSectionKey(section, index)),
+              )}
             </div>
           </section>
         ) : null}
-        {storyCards ? (
+        {remainingSections.length ? (
           <div className="relative z-20">
-            <StoryCardSection section={storyCards} />
+            {remainingSections.map((section, index) =>
+              renderSection(section, getSectionKey(section, index)),
+            )}
           </div>
         ) : null}
-        {cta ? renderSection(cta) : null}
-        {footer ? renderSection(footer) : null}
       </main>
       <ContactFloatingButtons actions={page.floatingActions} />
     </>

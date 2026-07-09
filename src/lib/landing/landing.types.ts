@@ -33,16 +33,20 @@ export type LandingTextBlockSection = {
 };
 
 export type LandingStoryCard = {
+  id?: string;
   title: string;
   body: string;
   image: string;
+  detailTitle?: string;
+  detailBody?: string[];
 };
 
 export type LandingStoryCardSection = {
   type: "storyCards";
   title: string;
   description?: string;
-  backgroundImage: string;
+  backgroundMode?: "image" | "plain";
+  backgroundImage?: string;
   cards: LandingStoryCard[];
 };
 

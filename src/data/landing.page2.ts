@@ -66,22 +66,41 @@ export const landingPage2: LandingPage = {
       title: "복덕방이 살펴보는 장면들",
       description:
         "매물을 보기 전후로 놓치기 쉬운 생활의 단서를 카드처럼 정리했습니다.",
+      backgroundMode: "image",
       backgroundImage: "/images/story-cards-background.png",
       cards: [
         {
+          id: "arrival",
           title: "아침의 이동",
           body: "출근 동선, 버스 간격, 지하철까지의 실제 체감 거리를 함께 확인합니다.",
           image: "/window.svg",
+          detailTitle: "출근과 귀가가 덜 흔들리는 집을 고릅니다.",
+          detailBody: [
+            "아침에 집을 나설 때 가장 먼저 확인하는 것은 역까지의 실제 체감 거리입니다.",
+            "버스와 지하철의 환승 동선, 골목의 밝기, 비 오는 날의 걸음까지 같이 봅니다.",
+          ],
         },
         {
+          id: "light",
           title: "낮의 채광",
           body: "집 안에서 오래 머무는 시간대의 빛과 환기 흐름을 기준에 넣습니다.",
           image: "/globe.svg",
+          detailTitle: "낮의 공간은 빛과 바람이 먼저 말해줍니다.",
+          detailBody: [
+            "낮 시간에 머무는 동안 눈이 편한지, 창가의 빛이 부드러운지 확인합니다.",
+            "환기 흐름과 소리의 잔향까지 같이 보면 오래 머무는 만족이 더 분명해집니다.",
+          ],
         },
         {
+          id: "night",
           title: "밤의 분위기",
           body: "귀가길 밝기, 주변 소음, 골목의 안정감을 생활 관점에서 살펴봅니다.",
           image: "/file.svg",
+          detailTitle: "밤에 더 조용해지는 집, 그리고 더 안심되는 동네를 찾습니다.",
+          detailBody: [
+            "늦은 시간 귀가할 때 골목이 얼마나 밝은지, 주변 소음이 어느 정도인지 함께 봅니다.",
+            "낮에는 보이지 않던 생활의 결이 밤에 더 잘 드러나기 때문입니다.",
+          ],
         },
       ],
     },
