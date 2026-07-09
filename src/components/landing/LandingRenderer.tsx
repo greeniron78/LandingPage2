@@ -57,21 +57,23 @@ export function LandingRenderer({ page }: LandingRendererProps) {
   return (
     <>
       <main>
-        {hero ? renderSection(hero) : null}
-        {storyCards ? (
-          <section className="relative isolate overflow-hidden bg-[#0f1813] text-white">
+        {hero ? (
+          <section className="relative isolate min-h-[200svh] bg-[#16251d] text-white">
             <div
-              className="pointer-events-none fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${storyCards.backgroundImage})` }}
-            >
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,24,19,0.72),rgba(15,24,19,0.96))]" />
-            </div>
-            <div className="relative z-10 mx-auto w-full max-w-5xl px-5 py-6 sm:px-8 sm:py-8 lg:px-10">
-              {storyVideo ? <VideoSection section={storyVideo} /> : null}
-              {storyText ? <TextBlockSection section={storyText} /> : null}
-              <StoryCardSection section={storyCards} />
+              className="pointer-events-none fixed inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${hero.backgroundImage})` }}
+            />
+            <div className="relative z-10 mx-auto w-full max-w-5xl px-5 pt-6 sm:px-8 sm:pt-8 lg:px-10">
+                <HeroSection section={hero} />
+                {storyVideo ? <VideoSection section={storyVideo} /> : null}
+                {storyText ? <TextBlockSection section={storyText} /> : null}
             </div>
           </section>
+        ) : null}
+        {storyCards ? (
+          <div className="relative z-20">
+            <StoryCardSection section={storyCards} />
+          </div>
         ) : null}
         {cta ? renderSection(cta) : null}
         {footer ? renderSection(footer) : null}

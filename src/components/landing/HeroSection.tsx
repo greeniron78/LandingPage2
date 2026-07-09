@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ActionButton } from "@/components/common/ActionButton";
 import type { LandingHeroSection } from "@/lib/landing/landing.types";
 
@@ -8,15 +7,7 @@ type HeroSectionProps = {
 
 export function HeroSection({ section }: HeroSectionProps) {
   return (
-    <section className="relative min-h-[88svh] overflow-hidden bg-[#16251d] px-5 py-8 text-white sm:px-8 lg:px-10">
-      <Image
-        src={section.backgroundImage}
-        alt=""
-        fill
-        priority
-        className="object-cover opacity-18 mix-blend-screen"
-      />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(22,37,29,0.72),rgba(22,37,29,0.96))]" />
+    <section className="relative min-h-[88svh] overflow-hidden bg-transparent px-5 py-8 text-white sm:px-8 lg:px-10">
       <div className="relative z-10 mx-auto flex min-h-[calc(88svh-4rem)] w-full max-w-5xl flex-col justify-end pb-12 pt-24">
         {section.eyebrow ? (
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#f2c66d]">

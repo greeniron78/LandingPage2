@@ -66,7 +66,7 @@ export const landingPage2: LandingPage = {
       title: "복덕방이 살펴보는 장면들",
       description:
         "매물을 보기 전후로 놓치기 쉬운 생활의 단서를 카드처럼 정리했습니다.",
-      backgroundImage: "/globe.svg",
+      backgroundImage: "/images/story-cards-background.png",
       cards: [
         {
           title: "아침의 이동",
