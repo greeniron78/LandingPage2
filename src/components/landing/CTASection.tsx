@@ -12,7 +12,7 @@ export function CTASection({ section }: CTASectionProps) {
   return (
     <SectionContainer
       ariaLabelledby={headingId}
-      className="bg-[#16251d] text-white"
+      className="bg-[#243C36] text-white"
       innerClassName="py-4"
     >
       <div className="max-w-3xl">
