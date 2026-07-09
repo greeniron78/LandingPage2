@@ -1,5 +1,5 @@
-import { bokdeokbangLanding } from "@/data/landing.bokdeokbang";
+import { landingPage2 } from "@/data/landing.page2";
 
 export async function getLandingPage() {
-  return bokdeokbangLanding;
+  return landingPage2;
 }

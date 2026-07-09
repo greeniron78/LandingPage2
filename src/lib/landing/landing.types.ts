@@ -7,6 +7,8 @@ export type LandingAction = {
   ariaLabel?: string;
 };
 
+export type CTAButton = LandingAction;
+
 export type LandingHeroSection = {
   type: "hero";
   eyebrow?: string;

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { bokdeokbangLanding } from "@/data/landing.bokdeokbang";
+import { landingPage2 } from "@/data/landing.page2";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: bokdeokbangLanding.seo.title,
-  description: bokdeokbangLanding.seo.description,
+  title: landingPage2.seo.title,
+  description: landingPage2.seo.description,
 };
 
 export default function RootLayout({
