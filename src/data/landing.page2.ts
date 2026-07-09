@@ -1,10 +1,10 @@
 import type { LandingPage } from "@/lib/landing/landing.types";
 
 const contact = {
-  phone: "010-0000-0000",
+  phone: "070-8667-7187",
   kakaoChannelUrl: "https://pf.kakao.com/_placeholder",
-  mapUrl: "https://map.kakao.com/link/search/복덕방",
-  address: "서울시 성동구 성수동 000-00",
+  mapUrl: "https://map.kakao.com/link/search/포디어카페",
+  address: "대구 달서구 월배로 162 1층",
 };
 
 export const landingPage2: LandingPage = {
@@ -12,7 +12,7 @@ export const landingPage2: LandingPage = {
   seo: {
     title: "landing_page2 | 동네를 먼저 읽는 부동산 상담",
     description:
-      "복덕방은 숫자보다 생활의 결을 먼저 듣는 스토리텔링형 부동산 상담 랜딩 페이지입니다.",
+      "포디어카페는 숫자보다 생활의 결을 먼저 듣는 스토리텔링형 부동산 상담 랜딩 페이지입니다.",
   },
   contact,
   floatingActions: [
@@ -33,7 +33,7 @@ export const landingPage2: LandingPage = {
       eyebrow: "Bokdeokbang Story Landing",
       title: "landing_page2, 당신의 하루를 먼저 듣습니다.",
       subtitle:
-        "복덕방은 동네의 공기, 출근길, 밤의 조용함까지 함께 살펴보며 오래 머물 수 있는 선택을 돕습니다.",
+        "포디어카페는 동네의 공기, 출근길, 밤의 조용함까지 함께 살펴보며 오래 머물 수 있는 선택을 돕습니다.",
       backgroundImage: "/images/story-background.png",
       actions: [
         {
@@ -59,11 +59,11 @@ export const landingPage2: LandingPage = {
       type: "text",
       eyebrow: "Our Point of View",
       title: "좋은 매물보다 먼저, 좋은 기준을 세웁니다.",
-      body: "가격과 평수만으로는 매일의 만족을 설명하기 어렵습니다. 복덕방은 생활 반경, 소음, 채광, 이동 시간, 주변 분위기를 함께 묻고 기록합니다. 그래서 상담의 끝은 단순한 목록이 아니라 나에게 맞는 선택지로 좁혀집니다.",
+      body: "가격과 평수만으로는 매일의 만족을 설명하기 어렵습니다. 포디어카페는 생활 반경, 소음, 채광, 이동 시간, 주변 분위기를 함께 묻고 기록합니다. 그래서 상담의 끝은 단순한 목록이 아니라 나에게 맞는 선택지로 좁혀집니다.",
     },
     {
       type: "storyCards",
-      title: "복덕방이 살펴보는 장면들",
+      title: "포디어카페가 살펴보는 장면들",
       description:
         "매물을 보기 전후로 놓치기 쉬운 생활의 단서를 카드처럼 정리했습니다.",
       backgroundMode: "image",
