@@ -1,8 +1,6 @@
-import { LandingRenderer } from "@/components/landing/LandingRenderer";
-import { getLandingPage } from "@/lib/landing/getLandingPage";
+import { redirect } from "next/navigation";
+import { defaultLandingPageSlug } from "@/data/landing.registry";
 
-export default async function Home() {
-  const landingPage = await getLandingPage();
-
-  return <LandingRenderer page={landingPage} />;
+export default function Home() {
+  redirect(`/landing/${defaultLandingPageSlug}`);
 }
