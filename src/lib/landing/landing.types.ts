@@ -37,6 +37,7 @@ export type LandingStoryCard = {
   title: string;
   body: string;
   image: string;
+  backgroundImage?: string;
   detailTitle?: string;
   detailBody?: string[];
 };
@@ -45,6 +46,7 @@ export type LandingStoryCardSection = {
   type: "storyCards";
   title: string;
   description?: string;
+  cardMode?: "plain" | "image";
   backgroundMode?: "image" | "plain";
   backgroundImage?: string;
   cards: LandingStoryCard[];

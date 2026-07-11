@@ -10,14 +10,14 @@ export function HeroSection({ section }: HeroSectionProps) {
     <section className="relative min-h-[88svh] overflow-hidden bg-transparent px-5 py-8 text-white sm:px-8 lg:px-10">
       <div className="relative z-10 mx-auto flex min-h-[calc(88svh-4rem)] w-full max-w-5xl flex-col justify-end pb-12 pt-24">
         {section.eyebrow ? (
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#f2c66d]">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#8B6F50]">
             {section.eyebrow}
           </p>
         ) : null}
-        <h1 className="max-w-3xl text-4xl font-black leading-tight text-balance sm:text-6xl">
+        <h1 className="max-w-3xl text-4xl font-black leading-tight text-balance sm:text-6xl text-[#292522]">
           {section.title}
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-7 text-white/82 sm:text-lg">
+        <p className="mt-5 max-w-2xl text-base leading-7 text-[#625B54]/82 sm:text-lg">
           {section.subtitle}
         </p>
         <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">

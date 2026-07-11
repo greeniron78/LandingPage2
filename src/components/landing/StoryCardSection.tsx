@@ -15,19 +15,18 @@ function getCardKey(card: LandingStoryCardSection["cards"][number], index: numbe
 
 export function StoryCardSection({ section }: StoryCardSectionProps) {
   const headingId = "landing-story-title";
-  const isImageBackground = section.backgroundMode === "image" && section.backgroundImage;
-  const wrapperClassName =
-    section.backgroundMode === "image"
-      ? "relative overflow-hidden bg-cover bg-center bg-no-repeat py-6 sm:py-8"
-      : "relative overflow-hidden bg-transparent py-6 sm:py-8";
+  const isSectionImageMode = section.backgroundMode === "image";
+  const isCardImageMode = section.cardMode === "image";
   const [flippedCardKey, setFlippedCardKey] = useState<string | null>(null);
 
   return (
     <section
       aria-labelledby={headingId}
-      className={wrapperClassName}
+      className={`relative overflow-hidden py-6 sm:py-8 ${
+        isSectionImageMode ? "bg-cover bg-center bg-no-repeat" : "bg-transparent"
+      }`}
       style={
-        isImageBackground
+        isSectionImageMode && section.backgroundImage
           ? { backgroundImage: `url(${section.backgroundImage})` }
           : undefined
       }
@@ -50,6 +49,7 @@ export function StoryCardSection({ section }: StoryCardSectionProps) {
           {section.cards.map((card, index) => {
             const cardKey = getCardKey(card, index);
             const isFlipped = flippedCardKey === cardKey;
+            const isImageCard = isCardImageMode && Boolean(card.backgroundImage);
 
             return (
               <article
@@ -61,28 +61,58 @@ export function StoryCardSection({ section }: StoryCardSectionProps) {
                     isFlipped ? "[transform:rotateY(180deg)]" : ""
                   }`}
                 >
-                  <div className="absolute inset-0 rounded-[28px] bg-white/90 p-4 text-[#16251d] shadow-2xl shadow-black/12 ring-1 ring-black/5 backdrop-blur [backface-visibility:hidden] sm:p-5">
+                  <div
+                    className={`absolute inset-0 overflow-hidden rounded-[28px] p-4 text-[#16251d] shadow-2xl shadow-black/12 ring-1 ring-black/5 [backface-visibility:hidden] sm:p-5 ${
+                      isImageCard ? "bg-cover bg-center bg-no-repeat" : "bg-white/90 backdrop-blur"
+                    } ${isFlipped ? "pointer-events-none" : "pointer-events-auto"}`}
+                    style={
+                      isImageCard
+                        ? { backgroundImage: `url(${card.backgroundImage})` }
+                        : undefined
+                    }
+                  >
+                    {isImageCard ? (
+                      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/65" />
+                    ) : null}
                     <div className="flex h-full flex-col">
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8e9b91]">
+                      <div className="relative z-10">
+                        <p
+                          className={`text-xs font-semibold uppercase tracking-[0.18em] ${
+                            isImageCard ? "text-white/75" : "text-[#8e9b91]"
+                          }`}
+                        >
                           0{index + 1}
                         </p>
-                        <h3 className="mt-3 text-xl font-black leading-tight sm:text-2xl">
+                        <h3
+                          className={`mt-3 text-xl font-black leading-tight sm:text-2xl ${
+                            isImageCard ? "text-white" : ""
+                          }`}
+                        >
                           {card.title}
                         </h3>
-                        <p className="mt-3 text-sm leading-6 text-[#526156] sm:text-base sm:leading-7">
+                        <p
+                          className={`mt-3 text-sm leading-6 sm:text-base sm:leading-7 ${
+                            isImageCard ? "text-white/88" : "text-[#526156]"
+                          }`}
+                        >
                           {card.body}
                         </p>
                       </div>
-                      <div className="flex flex-1 items-center justify-center">
-                        <div className="relative w-full max-w-[11rem] aspect-[4/3] overflow-hidden rounded-2xl bg-[#dfe7df]">
-                          <Image src={card.image} alt="" fill className="object-contain p-6" />
-                        </div>
+                      <div className="relative z-10 flex flex-1 items-center justify-center">
+                        {isImageCard ? null : (
+                          <div className="relative aspect-[4/3] w-full max-w-[11rem] overflow-hidden rounded-2xl bg-[#dfe7df]">
+                            <Image src={card.image} alt="" fill className="object-contain p-6" />
+                          </div>
+                        )}
                       </div>
-                      <div className="mt-auto pt-5">
+                      <div className="relative z-10 mt-auto pt-5">
                         <button
                           type="button"
-                          className="inline-flex h-10 items-center justify-center rounded-full border border-[#16251d]/12 px-4 text-sm font-semibold text-[#16251d] transition hover:bg-[#f5f1e8]"
+                          className={`inline-flex h-10 items-center justify-center rounded-full border px-4 text-sm font-semibold transition ${
+                            isImageCard
+                              ? "border-white/20 bg-black/20 text-white hover:bg-black/30"
+                              : "border-[#16251d]/12 text-[#16251d] hover:bg-[#f5f1e8]"
+                          }`}
                           onClick={() => setFlippedCardKey(cardKey)}
                         >
                           이야기 보기
@@ -91,7 +121,11 @@ export function StoryCardSection({ section }: StoryCardSectionProps) {
                     </div>
                   </div>
 
-                  <div className="absolute inset-0 rounded-[28px] bg-white p-5 text-[#16251d] shadow-2xl shadow-black/12 ring-1 ring-black/5 [backface-visibility:hidden] [transform:rotateY(180deg)] sm:p-6">
+                  <div
+                    className={`absolute inset-0 rounded-[28px] bg-white p-5 text-[#16251d] shadow-2xl shadow-black/12 ring-1 ring-black/5 [backface-visibility:hidden] [transform:rotateY(180deg)] sm:p-6 ${
+                      isFlipped ? "pointer-events-auto z-10" : "pointer-events-none"
+                    }`}
+                  >
                     <div className="flex h-full flex-col">
                       <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8e9b91]">
                         매물문의 0{index + 1}

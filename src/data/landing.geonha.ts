@@ -1,18 +1,18 @@
 import type { LandingPage } from "@/lib/landing/landing.types";
 
 const contact = {
-  phone: "070-8667-7187",
+  phone: "001-3806-9221",
   kakaoChannelUrl: "https://pf.kakao.com/_placeholder",
-  mapUrl: "https://map.kakao.com/link/search/포디어카페",
-  address: "대구 달서구 월배로 162 1층",
+  mapUrl: "https://map.kakao.com/link/search/건하뷰티",
+  address: "대구 동구 동호로69 동호월드타운5층 건하뷰티",
 };
 
 export const landingPage2: LandingPage = {
-  slug: "landing-page2",
+  slug: "프리미엄 스킨케어 | 건하뷰티",
   seo: {
-    title: "landing_page2 | 동네를 먼저 읽는 부동산 상담",
+    title: "프리미엄 스킨케어 | 건하뷰티에서 시작하새요",
     description:
-      "포디어카페는 숫자보다 생활의 결을 먼저 듣는 스토리텔링형 부동산 상담 랜딩 페이지입니다.",
+      "건하뷰티는 피부 고민과 컨디션을 세심하게 살펴 개인별 맞춤 케어를 제공하는 프리미엄 스킨케어 전문 뷰티샵입니다.",
   },
   contact,
   floatingActions: [
@@ -30,11 +30,11 @@ export const landingPage2: LandingPage = {
   sections: [
     {
       type: "hero",
-      eyebrow: "Bokdeokbang Story Landing",
-      title: "landing_page2, 당신의 하루를 먼저 듣습니다.",
+      eyebrow: "Geonha Beauty · Premium Skin Care",
+      title: "건하뷰티",
       subtitle:
-        "포디어카페는 동네의 공기, 출근길, 밤의 조용함까지 함께 살펴보며 오래 머물 수 있는 선택을 돕습니다.",
-      backgroundImage: "/images/story-background.png",
+        "건하뷰티는 피부 고민과 현재 컨디션을 세심하게 살펴, 본연의 아름다움을 되찾을 수 있는 맞춤형 프리미엄 케어를 제공합니다.",
+      backgroundImage: "/images/geonha-background.png",
       actions: [
         {
           type: "kakao",
@@ -52,7 +52,7 @@ export const landingPage2: LandingPage = {
       type: "video",
       title: "상담은 이렇게 시작됩니다",
       description:
-        "짧은 소개 영상을 통해 포디어카페가 매물을 고르는 방식과 상담 흐름을 확인해 보세요.",
+        "",
       youtubeUrl: "https://youtu.be/yNQ23sQ9pxg?si=Ei6k9gWKhYf19Hb2",
     },
     {
@@ -66,8 +66,6 @@ export const landingPage2: LandingPage = {
       title: "포디어카페가 살펴보는 장면들",
       description:
         "매물을 보기 전후로 놓치기 쉬운 생활의 단서를 카드처럼 정리했습니다.",
-      backgroundMode: "image",
-      backgroundImage: "/images/story-cards-background.png",
       cardMode: "image",
       cards: [
         {
@@ -87,7 +85,7 @@ export const landingPage2: LandingPage = {
           title: "낮의 채광",
           body: "집 안에서 오래 머무는 시간대의 빛과 환기 흐름을 기준에 넣습니다.",
           image: "/globe.svg",
-          backgroundImage: "/images/geonha-background.png",
+          backgroundImage: "/images/story-background.png",
           detailTitle: "낮의 공간은 빛과 바람이 먼저 말해줍니다.",
           detailBody: [
             "낮 시간에 머무는 동안 눈이 편한지, 창가의 빛이 부드러운지 확인합니다.",
@@ -99,7 +97,7 @@ export const landingPage2: LandingPage = {
           title: "밤의 분위기",
           body: "귀가길 밝기, 주변 소음, 골목의 안정감을 생활 관점에서 살펴봅니다.",
           image: "/file.svg",
-          backgroundImage: "/images/story-cards-background.png",
+          backgroundImage: "/images/story-background.png",
           detailTitle: "밤에 더 조용해지는 집, 그리고 더 안심되는 동네를 찾습니다.",
           detailBody: [
             "늦은 시간 귀가할 때 골목이 얼마나 밝은지, 주변 소음이 어느 정도인지 함께 봅니다.",
